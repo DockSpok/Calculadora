@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private double valor1, valor2, resultado;
     private String operacao = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,23 +59,23 @@ public class MainActivity extends AppCompatActivity {
         btnIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-            valor2 = Double.parseDouble(txtDisplay.getText().toString());
-            switch (operacao) {
-                case "+":
-                    resultado = valor1 + valor2;
-                    break;
-                case "-":
-                    resultado = valor1 - valor2;
-                    break;
-                case "*":
-                    resultado = valor1 * valor2;
-                    break;
-                case "/":
-                    resultado = valor1 / valor2;
-                    break;
+                valor2 = Double.parseDouble(txtDisplay.getText().toString());
+                switch (operacao) {
+                    case "+":
+                        resultado = valor1 + valor2;
+                        break;
+                    case "-":
+                        resultado = valor1 - valor2;
+                        break;
+                    case "*":
+                        resultado = valor1 * valor2;
+                        break;
+                    case "/":
+                        resultado = valor1 / valor2;
+                        break;
+                }
+                txtDisplay.setText(Double.toString(resultado));
             }
-            txtDisplay.setText(Double.toString(resultado));
-        }
         });
 
         btnCE.setOnClickListener(new View.OnClickListener(){
@@ -87,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     View.OnClickListener cliqueBotaoNumerico = new View.OnClickListener(){
         @Override
         public void onClick(View v){
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             txtDisplay.setText(txtDisplay.getText().toString() + botaoPressionado.getText());
         }
     };
+
      View.OnClickListener cliqueBotaoOperacao = new View.OnClickListener(){
         @Override
         public void onClick(View v){
